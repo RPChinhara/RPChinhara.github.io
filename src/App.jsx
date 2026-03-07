@@ -172,7 +172,7 @@ export default function App() {
           <div key={i} className="entry">
             <h3>{p.title}</h3>
             <div className="meta">{p.period}</div>
-            <p>{p.desc}</p>
+            <p style={{ textAlign: "justify" }}>{p.desc}</p>
             <div>{p.tags.map(t => <span key={t} className="tag">{t}</span>)}</div>
           </div>
         ))}
