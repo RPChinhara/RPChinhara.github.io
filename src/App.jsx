@@ -19,41 +19,46 @@ const RESUME = {
     {
     title: "Gait2Health — Smartphone Gait-Based Deep Learning for Smoking Risk Detection",
     period: "Sep – Nov 2025 · IIT Bombay",
-    desc: `Developed a smartphone accelerometer–based digital biomarker system for classifying smoker vs non-smoker gait patterns using a 93-subject dataset. Designed a lightweight hybrid LSTM + feed-forward neural architecture (~5.6K parameters) optimized for mobile inference. Benchmarked against Vector Autoregression and demonstrated model assumption failures under nonlinear gait dynamics. Addressed class imbalance and noisy time-series data using weighted BCE, focal loss, cosine-annealing learning rate, and warm-restart SGD, achieving F1 ≈ 0.87. Applied Integrated Gradients to interpret model predictions and identify discriminative biomechanical gait features linked to smoking-related physiological changes.`,
+    desc: `Gait2Health explores whether everyday smartphone motion data can reveal behavioral health risks associated with smoking. Using a dataset of 93 participants, I developed a lightweight hybrid LSTM–feedforward neural network designed to classify smoker and non-smoker gait patterns directly from accelerometer signals. Traditional Vector Autoregression models were evaluated as a baseline but struggled with nonlinear rotational gait dynamics present in the data. The final model incorporated focal loss and cosine-annealed optimization to handle class imbalance and noisy time-series signals, achieving an F1 score of approximately 0.87. Model explanations using Integrated Gradients highlighted sensor channels and temporal gait patterns most strongly associated with smoking-related biomechanical effects.`,
     tags: ["Deep Learning", "Digital Biomarkers", "LSTM", "Explainable AI"]
     },
+
     {
     title: "Evaluating Structured Physiotherapy with Omaveloxolone for Friedreich Ataxia",
     period: "Sep – Nov 2025 · IIT Bombay",
-    desc: `Designed a clinical trial framework to evaluate combined pharmacological and physiotherapy intervention for Friedreich Ataxia patients. Developed a two-arm parallel randomized controlled trial with power-based sample size estimation (α = 0.05, power = 80%) and defined inclusion–exclusion criteria across 25+ clinical variables. Built a comprehensive Case Report Form (CRF) containing 120+ structured data fields spanning clinical outcomes, vitals, laboratory markers, genetic information, adverse events, and physiotherapy adherence. Mapped trial variables to CDISC SDTM domains to ensure regulatory-grade interoperability. Designed a normalized clinical database schema with 15+ relational tables and a complete ER model for longitudinal patient monitoring.`,
+    desc: `To investigate the potential benefits of combining physiotherapy with Omaveloxolone treatment for Friedreich Ataxia, I designed the data and study infrastructure for a randomized clinical trial. The study followed a two-arm parallel RCT design with power-based sample size estimation and carefully defined eligibility criteria across multiple clinical variables. A detailed Case Report Form was developed with more than 120 structured data fields capturing longitudinal patient outcomes, laboratory markers, genetic information, adverse events, and therapy adherence. All variables were mapped to CDISC SDTM standards to ensure interoperability with regulatory clinical datasets. The work also produced a normalized relational database schema and ER model capable of supporting longitudinal patient monitoring.`,
     tags: ["Clinical Trials", "Clinical Data Management", "CDISC SDTM", "Database Design"]
     },
+
     {
     title: "Causal Analysis of Alcohol Abuse on Employment",
     period: "Sep – Oct 2025 · IIT Bombay",
-    desc: `Developed causal inference models to estimate the effect of alcohol abuse on employability while correcting for endogeneity and omitted variable bias. Implemented and compared 2SLS, Bivariate Probit, and Two-Stage Residual Inclusion (2SRI) models on a dataset of 9,822 observations with 33 socioeconomic variables. Conducted robustness checks including Wu-Hausman endogeneity tests and Sargan tests for instrument validity. Demonstrated that naive regression underestimated the negative causal impact of substance abuse by over 15 percentage points, with causal estimates ranging from −19% to −34% compared to −2% from baseline models.`,
+    desc: `Understanding how substance abuse affects employability requires separating correlation from true causal effects. Using a dataset of 9,822 observations with 33 socioeconomic variables, I implemented several econometric approaches including Two-Stage Least Squares, Bivariate Probit, and Two-Stage Residual Inclusion models. Instrument validity and endogeneity were assessed through Wu–Hausman and Sargan tests. The analysis showed that naive regression approaches significantly underestimate the negative impact of alcohol abuse on employment outcomes. In contrast, causal models estimated a statistically significant reduction in employment probability ranging from roughly 19% to 34%.`,
     tags: ["Causal Inference", "Econometrics", "2SLS", "Statistical Modeling"]
     },
+
     {
     title: "Tumor Micro-Environment Network Analysis",
     period: "Mar – Apr 2024 · KCDH, Ashoka University",
-    desc: `Implemented spatial network analysis on multiplex mIHC whole-slide imaging data across 40+ patient samples to study tumor-immune micro-environment interactions. Constructed cell-level graphs using 35µm neighborhood rules and engineered graph topology features including mixing score, clustering coefficient, stromal barrier metrics, and modularity. Demonstrated phenotypic separability between cold, mixed, and compartmentalized tumor micro-environments. Validated hypothesized interaction structures using correlation analysis on 22 MIBI samples.`,
+    desc: `This work examined spatial organization patterns within tumor micro-environments using multiplex immunohistochemistry whole-slide imaging data. Cell-level interaction graphs were constructed from more than forty patient slides using 35 µm neighborhood rules to model tumor–immune spatial relationships. Several graph topology features, including mixing score, clustering coefficient, stromal barrier metrics, and modularity, were engineered to characterize tissue architecture. The resulting network representations revealed distinct structural patterns separating cold, mixed, and compartmentalized tumor environments. Additional validation using MIBI sample correlations supported the hypothesized interaction structures.`,
     tags: ["Computational Pathology", "Network Analysis", "WSI", "Graph Modeling"]
     },
+
     {
     title: "Cold Start Item Recommendation System",
     period: "Aug – Dec 2023 · Central University of Haryana",
-    desc: `Developed an item cold-start recommendation system using the MovieLens-200k dataset with a modular experimentation pipeline for recommender model comparison. Implemented Attribute-Fused SVD, LearnMAP, LearnAROMA, and DynamicBPR from scratch and designed an attribute-space → latent-space projection framework to improve recommendations for new items. Built an incremental update mechanism using DynamicBPR to update item vectors without full retraining, reducing exploration load by 71% while maintaining 95–97% of full-model accuracy.`,
+    desc: `Recommender systems struggle when new items enter the platform without interaction history. To address this cold-start problem, I built a recommendation pipeline using the MovieLens-200k dataset and implemented several algorithms including Attribute-Fused SVD, LearnMAP, LearnAROMA, and DynamicBPR from scratch. The system projects item attributes into latent feature space to generate initial recommendations before sufficient user interactions accumulate. An incremental update mechanism based on DynamicBPR allows item vectors to be updated without retraining the entire model, reducing exploration overhead by roughly 71% while maintaining 95–97% of full-model ranking performance.`,
     tags: ["Recommender Systems", "Matrix Factorization", "SVD", "Ranking Models"]
     }
-  ],
-  skills: [
-    { title: "Programming", items: "Python, R, SQL, Bash, SPARQL" },
-    { title: "ML & AI", items: "PyTorch, TensorFlow, Deep Learning, LLM Agents, RAG, LLM Finetuning, Knowledge Graphs, NLP, Computer Vision" },
-    { title: "Statistical Methods", items: "Causal Inference, Predictive Modeling, Regression, Econometrics, Network Science" },
-    { title: "Health Informatics", items: "OMOP CDM, SNOMED-CT, FAIR Pipelines, Healthcare Interoperability" },
-    { title: "Data Engineering", items: "ETL Pipelines, Data Validation, Clinical Data Management" },
-    { title: "Systems & Dev", items: "Linux, HPC, System Administration, Git, API Development, Bioinformatics" },
+
+    ],
+    skills: [
+      { title: "Programming", items: "Python, R, SQL, Bash, SPARQL" },
+      { title: "ML & AI", items: "PyTorch, TensorFlow, Deep Learning, LLM Agents, RAG, LLM Finetuning, Knowledge Graphs, NLP, Computer Vision" },
+      { title: "Statistical Methods", items: "Causal Inference, Predictive Modeling, Regression, Econometrics, Network Science" },
+      { title: "Health Informatics", items: "OMOP CDM, SNOMED-CT, FAIR Pipelines, Healthcare Interoperability" },
+      { title: "Data Engineering", items: "ETL Pipelines, Data Validation, Clinical Data Management" },
+      { title: "Systems & Dev", items: "Linux, HPC, System Administration, Git, API Development, Bioinformatics" },
   ],
   // publications: [
   //   { title: "Integrating Indian Drug Data with International Standards for Enhanced Interoperability", authors: "Rudrapratap Chinhara, Ashish Kumar, Dr. Anshul Kundra", venue: "Journal of Biomedical Informatics (Under Review)", year: "2024", abstract: "This paper presents a comprehensive framework for integrating Indian drug data with international standards to enhance interoperability in healthcare systems. We developed an automated ETL pipeline to map 253,617+ Indian brand drug records to OMOP CDM vocabularies using PubChem IDs and SNOMED-CT. Our approach addresses challenges in data heterogeneity and standardization, enabling seamless integration with global drug databases. The resulting unified dataset facilitates improved clinical decision support and research applications." },
