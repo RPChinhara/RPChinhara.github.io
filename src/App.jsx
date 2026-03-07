@@ -30,6 +30,9 @@ const RESUME = {
     { title: "Data Engineering", items: "ETL Pipelines, Data Validation, Clinical Data Management" },
     { title: "Systems & Dev", items: "Linux, HPC, System Administration, Git, API Development, Bioinformatics" },
   ],
+  // publications: [
+  //   { title: "Integrating Indian Drug Data with International Standards for Enhanced Interoperability", authors: "Rudrapratap Chinhara, Ashish Kumar, Dr. Anshul Kundra", venue: "Journal of Biomedical Informatics (Under Review)", year: "2024", abstract: "This paper presents a comprehensive framework for integrating Indian drug data with international standards to enhance interoperability in healthcare systems. We developed an automated ETL pipeline to map 253,617+ Indian brand drug records to OMOP CDM vocabularies using PubChem IDs and SNOMED-CT. Our approach addresses challenges in data heterogeneity and standardization, enabling seamless integration with global drug databases. The resulting unified dataset facilitates improved clinical decision support and research applications." },
+  // ]
 };
 
 export default function App() {
@@ -49,7 +52,7 @@ export default function App() {
         p { color: #b0b0b0; margin-bottom: 6px; }
         ul { padding-left: 18px; color: #b0b0b0; }
         li { margin-bottom: 4px; }
-        hr { border: none; border-top: 1px solid #333; margin: 20px 0; }
+        hr { border: none; border-top: 1px solid #333; margin: 10px 0; }
         .meta { font-size: 13px; color: #777; margin-bottom: 6px; }
         .entry { margin-bottom: 24px; }
         .tag { display: inline-block; font-size: 11px; background: #2a2a2a; color: #888; border: 1px solid #3a3a3a; padding: 1px 7px; border-radius: 3px; margin: 3px 3px 0 0; }
@@ -59,7 +62,7 @@ export default function App() {
       `}</style>
 
       {/* Header */}
-      <div style={{ marginBottom: 24, display: "flex", alignItems: "center", gap: 18 }}>
+      <div style={{ marginBottom: 6, display: "flex", alignItems: "center", gap: 18 }}>
   
       <img
         src="/profile.jpeg"
@@ -73,16 +76,17 @@ export default function App() {
         }}
       />
 
-      <div style={{ marginBottom: 24 }}>
+      <div style={{ marginBottom: 0 }}>
         <h1>Rudrapratap Chinhara</h1>
         <div style={{ fontSize: 14, color: "#777", marginBottom: 14 }}>
-          M.S. Researcher · Koita Centre for Digital Health · IIT Bombay
+          Deep Learning · Knowledge Graphs · Generative AI · Network Science
         </div>
         <nav>
           <a href="#about">about</a>
           <a href="#experience">experience</a>
           <a href="#projects">projects</a>
           <a href="#skills">skills</a>
+          <a href="#publications">publications</a>
           <Link to="/blog" style={{ fontSize: 14, color: "#888" }}>blog</Link>
         </nav>
       </div>
@@ -151,6 +155,18 @@ export default function App() {
           </tbody>
         </table>
       </section>
+
+      {/* Publications */}
+      {/* <section id="publications">
+        <h2>Publications</h2>
+        {RESUME.publications.map((pub, i) => (
+          <div key={i} className="entry">
+            <h3>{pub.title}</h3>
+            <div className="meta">{pub.authors} · {pub.venue} · {pub.year}</div>
+            <p>{pub.abstract}</p>
+          </div>
+        ))}
+      </section> */}
 
       {/* Footer */}
       <div style={{ marginTop: 56, fontSize: 13, color: "#555", borderTop: "1px solid #333", paddingTop: 18 }}>
