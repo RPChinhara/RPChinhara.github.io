@@ -1,5 +1,15 @@
-import './index.css'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App.jsx'
+import BlogPage from './BlogPage.jsx'
+import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <BrowserRouter basename="/RPChinhara.github.io">
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/blog" element={<BlogPage />} />
+    </Routes>
+  </BrowserRouter>
+)
