@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { supabase } from "./supabase";
 
 const BLOG_PASSWORD_HASH = "62d7c9e7dd5634792f7aec4279a96dc443d879d1a86f8122196454a33a8aefa7"; // replace with your hash
 
@@ -9,9 +10,22 @@ async function hashPassword(pw) {
 }
 
 export default function BlogPage() {
-  const [posts, setPosts] = useState(() => {
-    try { return JSON.parse(localStorage.getItem("rc_blog_posts") || "[]"); } catch { return []; }
-  });
+  const [posts, setPosts] = useState([]);
+
+useEffect(() => {
+  async function loadPosts() {
+    const { data, error } = await supabase
+    .from("posts")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+    console.log("Supabase result:", data, error);
+
+    if (!error) setPosts(data || []);
+  }
+
+  loadPosts();
+  }, []);
   const [authed, setAuthed] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [pwInput, setPwInput] = useState("");
@@ -24,12 +38,39 @@ export default function BlogPage() {
 
   const save = (updated) => { setPosts(updated); localStorage.setItem("rc_blog_posts", JSON.stringify(updated)); };
 
-  const publish = () => {
-    if (!form.title.trim() || !form.body.trim()) return;
-    const post = { id: Date.now(), title: form.title.trim(), body: form.body.trim(), tags: form.tags.split(",").map(t => t.trim()).filter(Boolean), date: new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }) };
-    save([post, ...posts]);
-    setForm({ title: "", body: "", tags: "" });
-    setWriting(false);
+  const publish = async () => {
+  if (!form.title.trim() || !form.body.trim()) return;
+
+  const { data, error } = await supabase
+    .from("posts")
+    .insert([
+      {
+        title: form.title,
+        body: form.body,
+        tags: form.tags.split(",").map(t => t.trim()).filter(Boolean)
+      }
+    ])
+    .select();
+
+  console.log("insert result:", data, error);
+
+  if (error) {
+    alert(error.message);
+    return;
+  }
+
+  setPosts([data[0], ...posts]);
+  setForm({ title: "", body: "", tags: "" });
+  setWriting(false);
+};
+
+  const deletePost = async (id) => {
+  await supabase
+    .from("posts")
+    .delete()
+    .eq("id", id);
+
+  setPosts(posts.filter(p => p.id !== id));
   };
 
   const login = async () => {
@@ -101,9 +142,9 @@ export default function BlogPage() {
           <div key={p.id} style={{ marginBottom: 40 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 12 }}>
               <h2>{p.title}</h2>
-              {authed && <button onClick={() => save(posts.filter(x => x.id !== p.id))} style={{ ...btnStyle, color: "#e07070", fontSize: 13, flexShrink: 0 }}>delete</button>}
+              {authed && <button onClick={() => deletePost(p.id)} style={{ ...btnStyle, color: "#e07070", fontSize: 13, flexShrink: 0 }}>delete</button>}
             </div>
-            <div style={{ fontSize: 13, color: "#666", marginBottom: 10 }}>{p.date}</div>
+            <div style={{ fontSize: 13, color: "#666", marginBottom: 10 }}>{new Date(p.created_at).toLocaleDateString()}</div>
             <p style={{ color: "#b0b0b0", whiteSpace: "pre-wrap", display: expanded === p.id ? "block" : "-webkit-box", WebkitLineClamp: expanded === p.id ? "unset" : 6, WebkitBoxOrient: "vertical", overflow: expanded === p.id ? "visible" : "hidden", marginBottom: 10 }}>{p.body}</p>
             <button onClick={() => setExpanded(expanded === p.id ? null : p.id)} style={btnStyle}>{expanded === p.id ? "show less" : "read more"}</button>
             {p.tags?.length > 0 && <div style={{ marginTop: 8 }}>{p.tags.map(t => <span key={t} className="tag">{t}</span>)}</div>}
