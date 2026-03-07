@@ -206,7 +206,7 @@ function MoreProjects({ tagStyle }) {
 }
 
 // ── Main App ──────────────────────────────────────────────────────────────────
-export default function Portfolio() {
+export default function App() {
   const [scrollPct, setScrollPct] = useState(0);
   const [activeSection, setActiveSection] = useState("hero");
 
