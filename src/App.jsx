@@ -50,7 +50,7 @@ const RESUME = {
   skills: [
     { title: "Programming", items: "Python, R, SQL, Bash, SPARQL" },
     { title: "ML & AI", items: "PyTorch, TensorFlow, Deep Learning, LLM Agents, RAG, LLM Finetuning, Knowledge Graphs, NLP, Computer Vision" },
-    { title: "Statistical Methods", items: "Causal Inference, Predictive Modeling, Regression, Econometrics" },
+    { title: "Statistical Methods", items: "Causal Inference, Predictive Modeling, Regression, Econometrics, Network Science" },
     { title: "Health Informatics", items: "OMOP CDM, SNOMED-CT, FAIR Pipelines, Healthcare Interoperability" },
     { title: "Data Engineering", items: "ETL Pipelines, Data Validation, Clinical Data Management" },
     { title: "Systems & Dev", items: "Linux, HPC, System Administration, Git, API Development, Bioinformatics" },
