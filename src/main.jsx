@@ -6,7 +6,7 @@ import BlogPage from './BlogPage.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/RPChinhara.github.io">
+  <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/blog" element={<BlogPage />} />
