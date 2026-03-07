@@ -36,8 +36,6 @@ useEffect(() => {
 
   useEffect(() => { document.body.style.background = "#1e1e1e"; }, []);
 
-  const save = (updated) => { setPosts(updated); localStorage.setItem("rc_blog_posts", JSON.stringify(updated)); };
-
   const publish = async () => {
   if (!form.title.trim() || !form.body.trim()) return;
 
