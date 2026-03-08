@@ -146,13 +146,20 @@ export default function App() {
           My broader goal is to build robust, scalable AI systems capable of extracting structure,
           relationships, and insights from large, complex datasets.
           </p>
+        
+        
+        <p style={{ marginTop: 8, fontSize: "20px" }}>
+          <a href={`mailto:${RESUME.email}`} style={{ marginRight: 12 }}>
+            <i className="fas fa-envelope"></i>
+          </a>
 
-        <p style={{ marginTop: 8 }}>
-          <a href={`mailto:${RESUME.email}`}>{"Email"}</a>
-          {" · "}
-          <a href={RESUME.github} target="_blank" rel="noreferrer">GitHub</a>
-          {" · "}
-          <a href={RESUME.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={RESUME.github} target="_blank" rel="noreferrer" style={{ marginRight: 12 }}>
+            <i className="fab fa-github"></i>
+          </a>
+
+          <a href={RESUME.linkedin} target="_blank" rel="noreferrer">
+            <i className="fab fa-linkedin"></i>
+          </a>
         </p>
 
         <hr />
