@@ -60,9 +60,9 @@ const RESUME = {
       { title: "Data Engineering", items: "ETL Pipelines, Data Validation, Clinical Data Management" },
       { title: "Systems & Dev", items: "Linux, HPC, System Administration, Git, API Development, Bioinformatics" },
   ],
-  // publications: [
-  //   { title: "Integrating Indian Drug Data with International Standards for Enhanced Interoperability", authors: "Rudrapratap Chinhara, Ashish Kumar, Dr. Anshul Kundra", venue: "Journal of Biomedical Informatics (Under Review)", year: "2024", abstract: "This paper presents a comprehensive framework for integrating Indian drug data with international standards to enhance interoperability in healthcare systems. We developed an automated ETL pipeline to map 253,617+ Indian brand drug records to OMOP CDM vocabularies using PubChem IDs and SNOMED-CT. Our approach addresses challenges in data heterogeneity and standardization, enabling seamless integration with global drug databases. The resulting unified dataset facilitates improved clinical decision support and research applications." },
-  // ]
+  publications: [
+    { title: "Blood transcriptomics reveal IL-10-modulated Neutrophil-Monocyte axis is associated with hypertrophic cardiomyopathy in Friedreich's Ataxia", authors: "Dr Mohammed Faruq, Ms Shweta Sahni , Mr Vivek anand , Ms Asangla Kamai , Dr Istaq Ahmad , Mr Zubair Bhat , Ms Pooja Sharma , Mr Manish Kumar , Mr Rudra Chinhara , Ms Bableen Kaur , Dr Rintu Kutum , Dr Muvin Khan , Dr Akhilesh Sonakar , Professor Achal Srivastava", venue: "TBA (Under Review)", year: "2025", abstract: "Friedreich’s ataxia (FRDA) caused by biallelic Frataxin (FXN) loss is classically a neurological disorder, yet cardiomyopathy is the leading cause of mortality. To identify peripheral transcriptomic markers, this study profiled blood from FRDA patients. Bulk mRNA sequencing of 52 patients versus 12 controls confirmed FXN down-regulation and revealed immune dysregulation signatures, especially neutrophil degranulation pathways. Single-cell RNA sequencing of PBMCs (16 patients, 15 controls) showed an expanded CD14⁺ monocyte pool, including an IL-10–producing subpopulation. Complementary whole-blood scRNA-seq (4 patients, 4 controls) demonstrated neutrophils with a STAT1-driven interferon/Ly6Ehi profile. Clinically, a higher neutrophil-to-lymphocyte ratio correlated with hypertrophic cardiomyopathy, while IL-10 levels in monocytes were lower in affected patients. Survival analysis identified IL10RB expression as a protective factor against FRDA-related cardiomyopathy. Collectively, the study delivers a transcriptomic atlas of the peripheral immune landscape in FRDA and implicates a neutrophil–monocyte axis, orchestrated by IL-10, as a modulator of inflammation, disease heterogeneity, and a promising source of blood-based biomarkers." },
+  ],
   awards: [
     { title: "Dr. Nitish Thakor Fellowship Award", issuer: "Koita Centre for Digital Health", year: "2026" }
   ]
@@ -186,7 +186,7 @@ export default function App() {
       </section>
 
       {/* Publications */}
-      {/* <section id="publications">
+      <section id="publications">
         <h2>Publications</h2>
         {RESUME.publications.map((pub, i) => (
           <div key={i} className="entry">
@@ -195,7 +195,7 @@ export default function App() {
             <p>{pub.abstract}</p>
           </div>
         ))}
-      </section> */}
+      </section>
 
       {/* Projects */}
       <section id="projects">
