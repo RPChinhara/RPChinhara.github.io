@@ -126,31 +126,19 @@ export default function App() {
 
       {/* About */}
       <section id="about">
-        <p>
-          Hi there! I am currently an M.S. by Research student at the
-          <a href="https://kcdh.iitb.ac.in/" target="_blank">Koita Centre for Digital Health</a>
-          at
-          <a href="https://www.iitb.ac.in/" target="_blank">Indian Institute of Technology Bombay</a>.
-          My work focuses on developing machine learning systems and data infrastructures for large-scale scientific and healthcare datasets.
+          <p style={{ textAlign: "justify" }}>
+          Hi there! I am currently an M.S. by Research student at the <a href="https://kcdh.iitb.ac.in/" target="_blank">Koita Centre for Digital Health</a> affliated with the <a href="https://www.iitb.ac.in/" target="_blank">Indian Institute of Technology Bombay</a>. I work under the supervision of Prof. Kshitij Jadhav and Prof. Pramod Wangikar, where I am involved in research projects at the intersection of AI, health informatics, and computational biology. 
           </p>
 
           <p>
-          My technical interests span deep learning, knowledge graphs, network science, and large-scale data engineering.
-          I work on designing deep neural architectures, building ETL pipelines for heterogeneous datasets,
-          and developing systems that integrate machine learning with structured and unstructured data sources.
-          I am particularly interested in scalable data pipelines, representation learning,
-          and graph-based modeling of complex systems.
+          My work focuses on building multimodal AI systems and data infrastructure for large-scale datasets. My interests include deep learning, knowledge graphs, network science, and scalable data engineering, with an emphasis on representation learning and graph-based modeling.
           </p>
 
-          <p>
-          Before joining IIT Bombay, I completed my B.Tech in Computer Science and Engineering from the
-          <a href="https://www.cuh.ac.in/" target="_blank">Central University of Haryana</a>.
-          During this time, I worked on several research projects involving large-scale data processing,
-          network analysis, and computational pipelines, and later continued working on Knowledge Graphs and AI systems through research internships at
-          <a href="https://www.ashoka.edu.in/" target="_blank">Ashoka University</a>.
+          <p style={{ textAlign: "justify" }}>
+          Before joining IIT Bombay, I completed my B.Tech in Computer Science and Engineering from <a href="https://www.cuh.ac.in/" target="_blank">Central University of Haryana</a>. During this time, I worked on several research projects involving large-scale data processing, network analysis, and computational pipelines, and later continued working on Knowledge Graphs and AI systems through research internships at <a href="https://www.ashoka.edu.in/" target="_blank">Ashoka University</a>.
           </p>
 
-          <p>
+          <p style={{ textAlign: "justify" }}>
           My broader goal is to build robust, scalable AI systems capable of extracting structure,
           relationships, and insights from large, complex datasets.
           </p>
