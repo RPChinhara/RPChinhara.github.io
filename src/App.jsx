@@ -91,13 +91,20 @@ export default function App() {
         .tag { display: inline-block; font-size: 11px; background: #2a2a2a; color: #888; border: 1px solid #3a3a3a; padding: 1px 7px; border-radius: 3px; margin: 3px 3px 0 0; }
         nav a { font-size: 14px; color: #888; margin-right: 18px; }
         nav a:hover { color: #d4d4d4; text-decoration: none; }
-        @media (max-width: 600px) { div[style*="max-width: 740px"] { padding: 32px 16px 60px; } }
+        @media (max-width: 600px) {
+          div[style*="max-width: 740px"] { padding: 32px 16px 60px; }
+          .site-header { flex-direction: column; align-items: flex-start; }
+          .site-profile-image { width: 96px !important; height: 96px !important; }
+          .site-nav { display: flex; flex-wrap: wrap; gap: 8px 14px; }
+          .site-nav a { margin-right: 0; }
+        }
       `}</style>
 
       {/* Header */}
-      <div style={{ marginBottom: 6, display: "flex", alignItems: "center", gap: 18 }}>
+      <div className="site-header" style={{ marginBottom: 6, display: "flex", alignItems: "center", gap: 18 }}>
   
       <img
+        className="site-profile-image"
         src="/profile.jpeg"
         alt="Rudrapratap Chinhara"
         style={{
@@ -114,7 +121,7 @@ export default function App() {
         <div style={{ fontSize: 14, color: "#777", marginBottom: 14 }}>
           Deep Learning · Knowledge Graphs · Generative AI · Network Science
         </div>
-        <nav>
+        <nav className="site-nav">
           <a href="#about">about</a>
           <a href="#experience">experience</a>
           <a href="#projects">projects</a>
