@@ -33,6 +33,8 @@ useEffect(() => {
   const [writing, setWriting] = useState(false);
   const [expanded, setExpanded] = useState(null);
   const [form, setForm] = useState({ title: "", body: "", tags: "" });
+  const [editingId, setEditingId] = useState(null);
+  const [editForm, setEditForm] = useState({ title: "", body: "", tags: "" });
 
   useEffect(() => { document.body.style.background = "#1e1e1e"; }, []);
 
@@ -61,6 +63,48 @@ useEffect(() => {
   setForm({ title: "", body: "", tags: "" });
   setWriting(false);
 };
+
+  const startEdit = (post) => {
+    setWriting(false);
+    setEditingId(post.id);
+    setEditForm({
+      title: post.title || "",
+      body: post.body || "",
+      tags: Array.isArray(post.tags) ? post.tags.join(", ") : ""
+    });
+  };
+
+  const cancelEdit = () => {
+    setEditingId(null);
+    setEditForm({ title: "", body: "", tags: "" });
+  };
+
+  const saveEdit = async (id) => {
+    if (!editForm.title.trim() || !editForm.body.trim()) return;
+
+    const payload = {
+      title: editForm.title,
+      body: editForm.body,
+      tags: editForm.tags.split(",").map(t => t.trim()).filter(Boolean)
+    };
+
+    const { data, error } = await supabase
+      .from("posts")
+      .update(payload)
+      .eq("id", id)
+      .select();
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    if (data && data[0]) {
+      setPosts(prev => prev.map(p => (p.id === id ? data[0] : p)));
+    }
+
+    cancelEdit();
+  };
 
   const deletePost = async (id) => {
   await supabase
@@ -143,8 +187,23 @@ useEffect(() => {
               {authed && <button onClick={() => deletePost(p.id)} style={{ ...btnStyle, color: "#e07070", fontSize: 13, flexShrink: 0 }}>delete</button>}
             </div>
             <div style={{ fontSize: 13, color: "#666", marginBottom: 10 }}>{new Date(p.created_at).toLocaleDateString()}</div>
-            <p style={{ color: "#b0b0b0", whiteSpace: "pre-wrap", display: expanded === p.id ? "block" : "-webkit-box", WebkitLineClamp: expanded === p.id ? "unset" : 6, WebkitBoxOrient: "vertical", overflow: expanded === p.id ? "visible" : "hidden", marginBottom: 10 }}>{p.body}</p>
-            <button onClick={() => setExpanded(expanded === p.id ? null : p.id)} style={btnStyle}>{expanded === p.id ? "show less" : "read more"}</button>
+            {editingId === p.id ? (
+              <div style={{ marginBottom: 10, borderLeft: "2px solid #333", paddingLeft: 16 }}>
+                <input value={editForm.title} onChange={e => setEditForm(f => ({ ...f, title: e.target.value }))} placeholder="Title" style={inputStyle} />
+                <textarea value={editForm.body} onChange={e => setEditForm(f => ({ ...f, body: e.target.value }))} placeholder="Edit post..." rows={10} style={{ ...inputStyle, resize: "vertical" }} />
+                <input value={editForm.tags} onChange={e => setEditForm(f => ({ ...f, tags: e.target.value }))} placeholder="Tags (comma separated)" style={inputStyle} />
+                <div style={{ display: "flex", gap: 16 }}>
+                  <button onClick={() => saveEdit(p.id)} style={btnStyle}>save changes →</button>
+                  <button onClick={cancelEdit} style={{ ...btnStyle, color: "#888" }}>cancel</button>
+                </div>
+              </div>
+            ) : (
+              <>
+                <p style={{ color: "#b0b0b0", whiteSpace: "pre-wrap", display: expanded === p.id ? "block" : "-webkit-box", WebkitLineClamp: expanded === p.id ? "unset" : 6, WebkitBoxOrient: "vertical", overflow: expanded === p.id ? "visible" : "hidden", marginBottom: 10 }}>{p.body}</p>
+                <button onClick={() => setExpanded(expanded === p.id ? null : p.id)} style={btnStyle}>{expanded === p.id ? "show less" : "read more"}</button>
+              </>
+            )}
+            {authed && editingId !== p.id && <div style={{ marginTop: 8 }}><button onClick={() => startEdit(p)} style={{ ...btnStyle, fontSize: 13, color: "#9ccf8f" }}>edit</button></div>}
             {p.tags?.length > 0 && <div style={{ marginTop: 8 }}>{p.tags.map(t => <span key={t} className="tag">{t}</span>)}</div>}
             <hr style={{ marginTop: 24 }} />
           </div>
