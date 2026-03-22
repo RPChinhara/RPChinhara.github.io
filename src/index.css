@@ -531,6 +531,7 @@ img {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
+  line-clamp: 6;
 }
 
 .academic-error {
