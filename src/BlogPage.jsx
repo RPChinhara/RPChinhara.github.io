@@ -181,7 +181,6 @@ export default function BlogPage() {
 
       <div className="academic-shell academic-shell--blog">
         <aside className="academic-aside academic-aside--blog">
-          <p className="academic-kicker">Notes and Writing</p>
           <h1>Blog</h1>
           <p className="academic-role" style={{ textAlign: "justify" }}>
             I write about my research and occasionally share updates about my work. This is also where I post drafts of my papers and projects for early feedback, so stay tuned!
