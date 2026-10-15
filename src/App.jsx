@@ -2,43 +2,59 @@ import { Link } from "react-router-dom";
 
 const PROFILE = {
   name: "Rudrapratap Chinhara",
-  role: "M.S. by Research, Digital Health",
+  role: "M.S. by Research Student · Digital Health",
   affiliation: "Koita Centre for Digital Health, Indian Institute of Technology Bombay",
-  subtitle: "Working at the intersection of AI, health informatics, computational biology, and large-scale data systems.",
-  email: "rudra.chinhara@iitb.ac.in",
+  subtitle: "Deep Learning, Knowledge Graphs and Medical Reasoning | AI for Healthcare",
+  email: "rpchinhara@gmail.com",
   linkedin: "https://linkedin.com/in/rudra-chinhara",
   github: "https://github.com/RPChinhara",
+  phone: "+91 920-564-5991",
   researchThemes: [
-    "Multimodal AI and digital biomarkers",
-    "Knowledge graphs and biomedical representation learning",
-    "Network science for complex biomedical data",
-    "Ontology-driven data modeling and semantic interoperability",
-    "Clinical data interoperability and health data infrastructure",
+    "Deep Learning and Multimodal AI",
+    "Reinforcement Learning for LLMs",
+    "Knowledge Graphs",
+    "Data Interoperability",
+    "Medical Reasoning",
   ],
   about: [
-    "I am currently an M.S. by Research student at the Koita Centre for Digital Health, affiliated with the Indian Institute of Technology Bombay. I work under the supervision of Prof. Kshitij Jadhav and Prof. Pramod Wangikar on research at the intersection of AI, health informatics, and computational biology.",
-    "My work focuses on building multimodal AI systems and data infrastructure for large-scale datasets. My interests include deep learning, knowledge graphs, network science, and scalable data engineering, with an emphasis on representation learning and graph-based modeling.",
-    "Before joining IIT Bombay, I completed my B.Tech in Computer Science and Engineering from Central University of Haryana. During that time, I worked on projects in large-scale data processing, network analysis, and computational pipelines, and later continued that trajectory through research internships at Ashoka University.",
-    "My broader goal is to build robust, scalable AI systems that can extract structure, relationships, and insight from large, complex biomedical and clinical datasets.",
+    "I am an M.S. by Research student at the Koita Centre for Digital Health, IIT Bombay, working at the intersection of AI, healthcare, and computational biology. My research interests span multimodal deep learning, vision-language models for medical reasoning, neurosymbolic AI, and knowledge graphs.",
+    "I am particularly interested in developing AI systems that combine learned representations with structured biomedical knowledge to support reliable reasoning in healthcare. Alongside model development, I have experience building scalable biomedical data pipelines, harmonizing health data across standards and ontologies, and analyzing biological networks. My broader interests lie in advancing trustworthy, efficient, and knowledge-grounded AI for healthcare."
   ],
 };
 
 const RESUME = {
   education: [
-    { degree: "M.S. by Research — Digital Health", school: "Indian Institute of Technology, Bombay", gpa: "9.80", period: "Aug 2025 – Jul 2028" },
+    { degree: "M.S. by Research — Digital Health", school: "Indian Institute of Technology, Bombay", gpa: "9.64", period: "Aug 2025 – Jul 2028" },
     { degree: "B.Tech — Computer Science & Engineering", school: "Central University of Haryana", gpa: "8.35", period: "Nov 2020 – Jul 2024" },
   ],
   experience: [
-    { role: "Research Assistant", org: "Koita Centre for Digital Health, IIT Bombay", period: "Aug 2025 – Present", bullets: ["Administered multi-user Linux/HPC infrastructure with GPU scheduling, access control, backups, and fault recovery for biomedical ML workloads.", "Automated user provisioning, quota enforcement, and job monitoring using Bash and systemd."] },
-    { role: "Research Intern", org: "Koita Centre for Digital Health, Ashoka University", period: "Feb 2024 – Jul 2024", bullets: ["Led a cross-standard health data interoperability project integrating 253,617+ Indian brand drug records with international databases.", "Mapped 1,799 active ingredients to OMOP/Athena vocabularies using PubChem IDs, SNOMED-CT, and fuzzy matching.", "Designed a Python-based network analysis framework for drug-ingredient-disease relationship modeling.", "Built a modular Python wrapper with API documentation to automate extraction, normalization, and network construction."] },
-    { role: "Research Intern", org: "Centre for Health Analytics and Trends, Ashoka University", period: "Jun 2023 – Aug 2023", bullets: ["Built an end-to-end ETL pipeline in Python and SQL for 250,000+ scraped drug records.", "Developed automated schema normalization and validation for large-scale metadata standardization.", "Integrated multiple international gold-standard drug databases for cross-database interoperability."] },
-    { role: "Research Intern", org: "Computational Health Sciences Lab, Ashoka University", period: "Apr 2022 – Jul 2022", bullets: ["Developed FAIR-compliant HPC workflows for large-scale RNA-seq data processing on multi-node clusters.", "Integrated a unified computational pipeline using 10+ bioinformatics tools.", "Performed disease-gene network analysis to identify novel associative links for translational research."] },
+    { role: "Research Intern", org: "Koita Centre for Digital Health, Ashoka University (KCDH-A)", period: "Feb 2024 – Jul 2024", bullets: ["Led a health data interoperability project integrating 253,617+ Indian brand drug records with international databases and mapped 1,799 active ingredients to standard clinical vocabularies.", "Built a modular Python wrapper with API documentation to automate extraction, normalization, ontology mapping, and network construction."] },
+    { role: "Research Intern", org: "Centre for Health Analytics and Trends, Ashoka University", period: "Jun 2023 – Aug 2023", bullets: ["Built an end-to-end Python and SQL ETL pipeline for 250,000+ scraped drug records.", "Developed automated schema normalization and validation methods for large-scale metadata standardization."] },
+    { role: "Research Intern", org: "Computational Health Sciences Lab, Ashoka University", period: "Apr 2022 – Jul 2022", bullets: ["Developed HPC workflows for large-scale RNA-seq processing and integrated a unified pipeline using 10+ bioinformatics tools.", "Performed disease–gene network analysis to identify associative links for translational research."] },
   ],
   projects: [
     {
+      title: "Deep Learning MCQ Visual Question Answering System",
+      period: "Apr – May 2026 · IIT Bombay",
+      desc: "Built an end-to-end multimodal visual question answering system using Qwen2.5-VL-7B-Instruct to answer deep learning multiple-choice questions from PNG images. Developed image preprocessing, prompt construction, batched inference, and CSV submission generation, improving answer accuracy to 93.3% through contrast enhancement and image preprocessing for text and diagram understanding.",
+      tags: ["VQA", "Multimodal AI", "Qwen2.5-VL", "Image Processing"],
+    },
+    {
+      title: "Test-Time Adaptation using TENT",
+      period: "Mar – Apr 2026 · IIT Bombay",
+      desc: "Reimplemented Test-Time Entropy Minimization (TENT) for online adaptation of deep learning models under distribution shift without source data. Trained ResNet-26 on CIFAR-10 and evaluated robustness on CIFAR-10-C across 15 corruption types. Reduced mean classification error from 46.56% to 24.51% and built a reproducible corruption-wise evaluation and visualization pipeline.",
+      tags: ["Test-Time Adaptation", "TENT", "ResNet-26", "Robustness"],
+    },
+    {
+      title: "CNN from Scratch using C++ and Python",
+      period: "Feb – Mar 2026 · IIT Bombay",
+      desc: "Built a custom deep learning framework with a C++ computational backend and Python frontend, implementing tensor operations, dynamic computation graphs, and reverse-mode automatic differentiation. Trained a lightweight CNN for 32×32 RGB image classification, reaching 96.71% accuracy with 24,234 trainable parameters and an average inference time of about 60 ms.",
+      tags: ["C++", "Python", "CNN", "Automatic Differentiation"],
+    },
+    {
       title: "Gait2Health — Smartphone Gait-Based Deep Learning for Smoking Risk Detection",
       period: "Sep – Nov 2025 · IIT Bombay",
-      desc: "Gait2Health explores whether everyday smartphone motion data can reveal behavioral health risks associated with smoking. Using a dataset of 93 participants, I developed a lightweight hybrid LSTM-feedforward neural network designed to classify smoker and non-smoker gait patterns directly from accelerometer signals. Traditional Vector Autoregression models were evaluated as a baseline but struggled with nonlinear rotational gait dynamics present in the data. The final model incorporated focal loss and cosine-annealed optimization to handle class imbalance and noisy time-series signals, achieving an F1 score of approximately 0.87. Model explanations using Integrated Gradients highlighted sensor channels and temporal gait patterns most strongly associated with smoking-related biomechanical effects.",
+      desc: "Developed a smartphone accelerometer-based digital biomarker system using gait signals from 93 participants to classify smoker and non-smoker patterns. Designed a lightweight hybrid LSTM and feed-forward network for mobile deployment, addressing noisy clinical time-series data with weighted BCE, focal loss, cosine annealing, and warm-restart SGD. Achieved an F1 score of 0.87 and used Integrated Gradients to analyze sensor-channel importance.",
       tags: ["Deep Learning", "Digital Biomarkers", "LSTM", "Explainable AI"],
     },
     {
@@ -50,7 +66,7 @@ const RESUME = {
     {
       title: "Causal Analysis of Alcohol Abuse on Employment",
       period: "Sep – Oct 2025 · IIT Bombay",
-      desc: "Understanding how substance abuse affects employability requires separating correlation from true causal effects. Using a dataset of 9,822 observations with 33 socioeconomic variables, I implemented several econometric approaches including Two-Stage Least Squares, Bivariate Probit, and Two-Stage Residual Inclusion models. Instrument validity and endogeneity were assessed through Wu-Hausman and Sargan tests. The analysis showed that naive regression approaches significantly underestimate the negative impact of alcohol abuse on employment outcomes. In contrast, causal models estimated a statistically significant reduction in employment probability ranging from roughly 19% to 34%.",
+      desc: "Compared instrumental-variable causal inference methods, including 2SLS, Bivariate Probit, and 2SRI, to estimate the effect of alcohol abuse on employability while addressing endogeneity and omitted-variable bias. Analyzed 9,822 observations across 33 variables and applied Wu-Hausman and Sargan tests. Advanced models estimated a significant negative employment effect of 19–34%, compared with about 2% under baseline linear probability models.",
       tags: ["Causal Inference", "Econometrics", "2SLS", "Statistical Modeling"],
     },
     {
@@ -67,25 +83,28 @@ const RESUME = {
     },
   ],
   skills: [
-    { title: "Programming", items: "Python, R, SQL, Bash, SPARQL" },
-    { title: "ML & AI", items: "PyTorch, TensorFlow, Deep Learning, Agentic AI, RAG, LLM Finetuning, Knowledge Graphs, Network Science, NLP, Computer Vision" },
-    { title: "Statistical Methods", items: "Causal Inference, Predictive Modeling, Regression, Econometrics" },
-    { title: "Health Informatics", items: "OMOP CDM, SNOMED-CT, FAIR Pipelines, Healthcare Interoperability" },
-    { title: "Data Engineering", items: "ETL Pipelines, Data Validation, Clinical Data Management" },
-    { title: "Systems & Dev", items: "Linux, HPC, System Administration, Git, API Development, Bioinformatics" },
+    { title: "Programming & Systems", items: "Python, R, SQL, Bash, C++, Linux, HPC Clusters, CUDA, Git, API Development, Bioinformatics Toolchains" },
+    { title: "AI & Machine Learning", items: "PyTorch, TensorFlow, Deep Learning, Computer Vision, VLMs, LLMs, Generative AI, Prompt Engineering, RAG, LLM Fine-tuning, Efficient AI" },
+    { title: "Data Science", items: "Recommendation Systems, Predictive Modeling, Regression, Causal Inference, Time-Series Analysis, Network Analysis, Information Retrieval" },
+    { title: "Health Informatics & Data", items: "ETL Pipelines, Data Validation, Biomedical Ontologies, Knowledge Graphs, OMOP CDM, Clinical Data Management, Healthcare Interoperability, FAIR Data Pipelines" },
+  ],
+  positions: [
+    { title: "Class Representative", meta: "DPGC (KCDH), IIT Bombay", description: "Elected representative for the M.S. by Research cohort, working with faculty and the department to represent the cohort, facilitate communication, and coordinate academic activities." },
+    { title: "Student Companion", meta: "Institute Student Companion Program (ISCP), IIT Bombay", description: "Selected through an interview for the 330-member institute program. Mentored 10 first-year M.S. by Research students, providing guidance on academics, institute life, and student resources." },
+    { title: "NAISH Core Team", meta: "Koita Centre for Digital Health, IIT Bombay", description: "Volunteered on the core team for the National AI Strategy for Health workshop, jointly organized by KCDH at IIT Bombay and Ashoka University." },
   ],
   publications: [
     {
-      title: "Blood transcriptomics reveal IL-10-modulated Neutrophil-Monocyte axis is associated with hypertrophic cardiomyopathy in Friedreich's Ataxia",
-      authors: "Dr Mohammed Faruq, Ms Shweta Sahni, Mr Vivek anand, Ms Asangla Kamai, Dr Istaq Ahmad, Mr Zubair Bhat, Ms Pooja Sharma, Mr Manish Kumar, <strong>Mr Rudra Chinhara</strong>, Ms Bableen Kaur, Dr Rintu Kutum, Dr Muvin Khan, Dr Akhilesh Sonakar, Professor Achal Srivastava",
-      venue: "TBA (Under Review)",
-      year: "2025",
-      abstract: "Friedreich's ataxia (FRDA) caused by biallelic Frataxin (FXN) loss is classically a neurological disorder, yet cardiomyopathy is the leading cause of mortality. To identify peripheral transcriptomic markers, this study profiled blood from FRDA patients. Bulk mRNA sequencing of 52 patients versus 12 controls confirmed FXN down-regulation and revealed immune dysregulation signatures, especially neutrophil degranulation pathways. Single-cell RNA sequencing of PBMCs (16 patients, 15 controls) showed an expanded CD14+ monocyte pool, including an IL-10-producing subpopulation. Complementary whole-blood scRNA-seq (4 patients, 4 controls) demonstrated neutrophils with a STAT1-driven interferon/Ly6Ehi profile. Clinically, a higher neutrophil-to-lymphocyte ratio correlated with hypertrophic cardiomyopathy, while IL-10 levels in monocytes were lower in affected patients. Survival analysis identified IL10RB expression as a protective factor against FRDA-related cardiomyopathy. Collectively, the study delivers a transcriptomic atlas of the peripheral immune landscape in FRDA and implicates a neutrophil-monocyte axis, orchestrated by IL-10, as a modulator of inflammation, disease heterogeneity, and a promising source of blood-based biomarkers.",
-      doi: "TBA",
+      title: "Ontology-guided harmonization enables unified discovery of public metabolomics studies within and across repositories",
+      authors: "S. Banerjee, <strong>R. Chinhara</strong>, P. Jalan, C. Kalle, P. Wangikar, K. Jadhav",
+      venue: "bioRxiv preprint",
+      year: "2026",
+      doi: "10.64898/2026.07.23.740366",
     },
   ],
   awards: [
-    { title: "Dr. Nitish Thakor Fellowship Award", issuer: "Koita Centre for Digital Health", year: "2026" },
+    { title: "Institute Academic Prize", issuer: "IIT Bombay · Highest CPI in the department", year: "Sep 2026" },
+    { title: "Dr. Nitish Thakor Fellowship Award", issuer: "Koita Centre for Digital Health, IIT Bombay · Best Research potential", year: "Mar 2026" },
   ],
 };
 
@@ -95,6 +114,7 @@ const NAV_ITEMS = [
   { label: "Projects", href: "#projects" },
   { label: "Publications", href: "#publications" },
   { label: "Skills", href: "#skills" },
+  { label: "Positions", href: "#positions" },
   { label: "Awards", href: "#awards" },
   { label: "Blog", to: "/blog" },
 ];
@@ -209,6 +229,9 @@ export default function App() {
               <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
                 LinkedIn
               </a>
+              <a href={`tel:${PROFILE.phone.replaceAll(" ", "")}`}>
+                {PROFILE.phone}
+              </a>
             </div>
           </div>
 
@@ -233,21 +256,6 @@ export default function App() {
                 {PROFILE.about.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
-              </div>
-
-              <div className="academic-note">
-                <p className="academic-mini-heading">Current Focus</p>
-                <p className="academic-lead">
-                  Building robust AI and data systems for clinically meaningful biomedical research.
-                </p>
-                <ul className="academic-compact-list">
-                  <li>Digital health workflows grounded in real-world clinical data.</li>
-                  <li>Graph-centric and multimodal learning for biological systems.</li>
-                  <li>Reproducible infrastructure for large-scale data pipelines.</li>
-                  <li>
-                    Large Language Models and generative AI for biomedical knowledge extraction and reasoning.
-                  </li>
-                </ul>
               </div>
             </div>
           </section>
@@ -327,6 +335,14 @@ export default function App() {
                 </div>
               ))}
             </div>
+          </Section>
+
+          <Section id="positions" title="Positions of Responsibility">
+            {RESUME.positions.map((position) => (
+              <Record key={position.title} title={position.title} meta={position.meta}>
+                <p>{position.description}</p>
+              </Record>
+            ))}
           </Section>
 
           <Section id="awards" title="Awards">

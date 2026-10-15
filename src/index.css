@@ -372,6 +372,10 @@ img {
   gap: 24px;
 }
 
+.academic-section--intro .academic-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .academic-grid p,
 .academic-record p,
 .academic-post__body,

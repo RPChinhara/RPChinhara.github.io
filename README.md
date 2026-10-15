@@ -50,7 +50,6 @@ npm run deploy
 
 ## Where to edit content
 
-- `src/App.jsx` — profile, education, experience, projects, publications, skills, and awards
+- `src/App.jsx` — profile, education, experience, projects, publications, skills, positions, and awards
 - `src/BlogPage.jsx` and `public/blog-posts.json` — blog page and its posts
-- `public/resume.pdf` — downloadable résumé linked from the profile sidebar
 - `src/index.css` — site styles
