@@ -365,7 +365,7 @@ export default function App() {
       {/* PROJECTS */}
       <section id="projects" style={{ padding: "100px 0" }}>
         <div style={S.container}>
-          <SectionHeader num="03" title="Selected Projects" />
+          <SectionHeader num="03" title="Projects" />
           <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
             {RESUME.projects.map((p, i) => (
               <div key={i} className="reveal"
